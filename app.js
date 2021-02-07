@@ -65,4 +65,4 @@ app.get("/", (req, res) => {
   res.send("Welcome to touronapi");
   console.log("Hello world");
 });
-app.listen(process.env.PORT || 4200, () => console.log("Running on 3000"));
+app.listen(process.env.PORT || 3000, () => console.log("Running on 3000"));
