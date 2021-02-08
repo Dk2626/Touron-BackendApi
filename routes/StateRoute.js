@@ -64,7 +64,7 @@ router.post("/state/edit/:id", async (req, res) => {
   state.stateName = req.body.stateName;
   state.aboutState = req.body.aboutState;
   state.imageUrl = req.body.imageUrl;
-  state.idealDays = req.body.idealDays;
+  state.bestTimeToVisit = req.body.bestTimeToVisit;
   state.bestPlaces = req.body.bestPlaces;
 
   console.log(state);

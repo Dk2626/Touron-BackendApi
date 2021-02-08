@@ -21,8 +21,9 @@ const State = new Schema(
       type: String,
       required: true,
     },
-    idealDays: {
-      type: String,
+
+    bestTimeToVisit: {
+      type: Array,
       required: true,
     },
   },
