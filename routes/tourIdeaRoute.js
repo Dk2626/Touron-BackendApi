@@ -78,7 +78,7 @@ router.get("/tour/cityname/:name", async (req, res) => {
 router.get("/tour/citynamelength/:name", async (req, res) => {
   const tour = await TourIdea.find({ cityName: req.params.name });
   console.log(tour.length);
-  res.send(tour.length);
+  res.send({ length: tour.length });
 });
 
 router.get("/tour/countryname/:name", async (req, res) => {
