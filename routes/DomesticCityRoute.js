@@ -64,6 +64,7 @@ router.post("/statecity/edit/:id", async (req, res) => {
   let stateCity = await DomesticCity.findById({ _id: req.params.id });
   console.log(req.body);
   stateCity.cityName = req.body.cityName;
+  stateCity.suggestedCombinations = req.body.suggestedCombinations;
   stateCity.countryName = req.body.countryName;
   stateCity.stateName = req.body.stateName;
   stateCity.aboutCity = req.body.aboutCity;
