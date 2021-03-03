@@ -8,6 +8,7 @@ require("./models/Blog");
 require("./models/Banner");
 require("./models/States");
 require("./models/DomesticCity");
+require("./models/CompanyStats");
 
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -22,6 +23,7 @@ const BlogRoute = require("./routes/BlogRoutes");
 const BannerRoute = require("./routes/BannerRoutes");
 const StateRoute = require("./routes/StateRoute");
 const DomesticCityRoute = require("./routes/DomesticCityRoute");
+const CompanyStats = require("./routes/CompanyStats");
 const app = express();
 
 // for production only
@@ -50,6 +52,7 @@ app.use(BlogRoute);
 app.use(StateRoute);
 app.use(BannerRoute);
 app.use(DomesticCityRoute);
+app.use(CompanyStats);
 const mongodbUri =
   "mongodb+srv://vicky:aamecvicky123@cluster0-knxey.mongodb.net/city?retryWrites=true&w=majority";
 
