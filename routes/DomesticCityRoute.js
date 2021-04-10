@@ -79,9 +79,17 @@ router.post("/statecity/edit/:id", async (req, res) => {
     (stateCity.travelDuration = req.body.travelDuration);
   stateCity.airportType = req.body.airportType;
   stateCity.airportName = req.body.airportName;
+  stateCity.foodJoints = req.body.foodJoints;
+  stateCity.cityTips = req.body.cityTips;
+  stateCity.thingsToPack = req.body.thingsToPack;
+  stateCity.documentsRequired = req.body.documentsRequired;
   console.log(stateCity);
-  stateCity.save();
-  res.json({ stateCity: stateCity }).status(200);
+  stateCity.save().then(async () => {
+    const stateCitys = await DomesticCity.find();
+    console.log("City route called");
+    res.send(stateCitys).status(200);
+  });
+  // res.json({ stateCity: stateCity }).status(200);
 });
 
 //Delete by id

@@ -35,20 +35,21 @@ router.get("/filtertour", async (req, res) => {
 });
 
 router.get("/tour", async (req, res) => {
-  // if (req.query.page && req.query.pageSize) {
-  //   const pageSize = parseInt(req.query.pageSize);
-  //   const page = parseInt(req.query.page);
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
 
-  //   const tour = await TourIdea.find()
-  //     .skip((page - 1) * 10)
-  //     .limit(pageSize);
-  //   console.log("City route called", tour.length);
-  //   res.send(tour);
-  // } else {
-  const tour = await TourIdea.find().catch((err) => console.log("err", err));
-  console.log(tour.length);
-  res.send(tour);
-  // }
+    const tour = await TourIdea.find()
+      .skip((page - 1) * 10)
+      .limit(pageSize);
+    console.log("City route called", tour.length);
+    res.send(tour);
+  } else {
+    const tour = await TourIdea.find();
+    console.log(tour.length);
+    res.send(tour);
+    // }
+  }
 });
 router.get("/tour/:id", async (req, res) => {
   console.log(req.params, "id vanthuruchu");
@@ -213,8 +214,10 @@ router.post("/tour/edit/:id", async (req, res) => {
   tour.videoAuthor = req.body.videoAuthor;
 
   console.log(tour);
-  tour.save();
-  res.json({ tour: tour }).status(200);
+  tour.save().then(async () => {
+    const tour = await TourIdea.find();
+    res.send(tour).status(200);
+  });
 });
 
 //Delete by id

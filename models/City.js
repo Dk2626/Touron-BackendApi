@@ -54,6 +54,22 @@ const City = new Schema(
       type: String,
       required: true,
     },
+    foodJoints: {
+      type: String,
+      required: false,
+    },
+    cityTips: {
+      type: String,
+      required: false,
+    },
+    thingsToPack: {
+      type: String,
+      required: false,
+    },
+    documentsRequired: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: { currentTime: () => Date.now() } }
 );

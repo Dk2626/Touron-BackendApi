@@ -83,10 +83,17 @@ router.post("/city/edit/:id", async (req, res) => {
   }),
     (city.travelDuration = req.body.travelDuration);
   city.airportType = req.body.airportType;
-  city.airportName = req.body.airportName;
+  city.foodJoints = req.body.foodJoints;
+  city.cityTips = req.body.cityTips;
+  city.thingsToPack = req.body.thingsToPack;
+  city.documentsRequired = req.body.documentsRequired;
   console.log(city);
-  city.save();
-  res.json({ city: city }).status(200);
+  city.save().then(async () => {
+    const cityData = await City.find();
+    res.json({ city: city, cityData: cityData }).status(200);
+  });
+
+  // res.send(city);
 });
 
 //Delete by id
