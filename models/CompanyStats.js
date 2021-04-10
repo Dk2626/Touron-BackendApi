@@ -21,7 +21,7 @@ const CompanyStats = new Schema(
       required: false,
     },
     googleReviewRating: {
-      type: Number,
+      type: String,
       required: false,
     },
   },
