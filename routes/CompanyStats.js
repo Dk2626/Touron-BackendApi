@@ -38,6 +38,8 @@ router.post("/stats/edit/:id", async (req, res) => {
   companyStats.certifiedCountries = req.body.certifiedCountries;
   companyStats.successfulTours = req.body.successfulTours;
   companyStats.happyTravellers = req.body.happyTravellers;
+  companyStats.googleReviewCount = req.body.googleReviewCount;
+  companyStats.googleReviewRating = req.body.googleReviewRating;
   companyStats.save();
   res.json({ companyStats: companyStats }).status(200);
 });

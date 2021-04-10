@@ -16,6 +16,14 @@ const CompanyStats = new Schema(
       type: Number,
       required: true,
     },
+    googleReviewCount: {
+      type: Number,
+      required: false,
+    },
+    googleReviewRating: {
+      type: Number,
+      required: false,
+    },
   },
   { timestamps: { currentTime: () => Date.now() } }
 );
