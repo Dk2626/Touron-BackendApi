@@ -18,7 +18,7 @@ const DomesticCity = new Schema(
     },
     suggestedCombinations: {
       type: String,
-      required: true,
+      required: false,
     },
     aboutCity: {
       type: String,
