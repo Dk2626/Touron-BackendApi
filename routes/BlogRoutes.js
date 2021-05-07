@@ -14,15 +14,15 @@ router.get("/blog", async (req, res) => {
     const page = parseInt(req.query.page);
 
     const blog = await Blog.find()
-
+      .sort({ createdAt: -1 })
       .skip((page - 1) * 10)
       .limit(pageSize);
     console.log("Blog route called", blog.length);
 
     res.send(blog);
   } else {
-    const blog = await Blog.find();
     console.log("Blog route called");
+    const blog = await Blog.find().sort({ createdAt: -1 });
     res.send(blog);
   }
 });

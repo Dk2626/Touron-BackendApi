@@ -38,7 +38,6 @@ const Blog = new Schema(
     },
     imageSrc1: {
       type: String,
-      require: true,
     },
     subHeading2: {
       type: String,
@@ -49,7 +48,6 @@ const Blog = new Schema(
     },
     imageSrc2: {
       type: String,
-      require: true,
     },
     subHeading3: {
       type: String,
@@ -60,7 +58,6 @@ const Blog = new Schema(
     },
     imageSrc3: {
       type: String,
-      require: true,
     },
     subHeading4: {
       type: String,
@@ -71,7 +68,6 @@ const Blog = new Schema(
     },
     imageSrc4: {
       type: String,
-      require: true,
     },
     subHeading5: {
       type: String,
@@ -82,7 +78,6 @@ const Blog = new Schema(
     },
     imageSrc5: {
       type: String,
-      require: true,
     },
     subHeading6: {
       type: String,
@@ -93,7 +88,6 @@ const Blog = new Schema(
     },
     imageSrc6: {
       type: String,
-      require: true,
     },
   },
   { timestamps: { currentTime: () => Date.now() } }
