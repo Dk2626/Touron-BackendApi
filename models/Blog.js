@@ -9,7 +9,7 @@ const Blog = new Schema(
       required: true,
     },
     countryName: {
-      type: Array,
+      type: String,
       required: true,
     },
     cityName: {
