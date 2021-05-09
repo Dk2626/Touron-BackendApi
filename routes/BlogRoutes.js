@@ -80,7 +80,7 @@ router.post("/blog/edit/:id", async (req, res) => {
   blog.content6 = req.body.content6;
 
   blog.save().then(async () => {
-    const blogData = await Blog.find().sort({ createdAt: -1 });
+    const blogData = await Blog.find();
     res.json({ blog: blogData }).status(200);
   });
 });
