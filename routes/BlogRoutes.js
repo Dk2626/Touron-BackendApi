@@ -79,9 +79,11 @@ router.post("/blog/edit/:id", async (req, res) => {
   blog.imageSrc6 = req.body.imageSrc6;
   blog.content6 = req.body.content6;
 
-  console.log(blog);
-  blog.save();
-  res.json({ blog: blog }).status(200);
+  blog.save().then(()=>{
+    const blogData = await Blog.find().sort({ createdAt: -1 });
+    res.json({ blog: blogData }).status(200);
+
+  })
 });
 
 //Delete by id
