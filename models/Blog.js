@@ -25,6 +25,10 @@ const Blog = new Schema(
       type: String,
       required: true,
     },
+    imageCredit: {
+      type: String,
+      required: false,
+    },
 
     keywords: {
       type: Array,
@@ -39,6 +43,10 @@ const Blog = new Schema(
     imageSrc1: {
       type: String,
     },
+    imageCredit1: {
+      type: String,
+      required: false,
+    },
     subHeading2: {
       type: String,
     },
@@ -48,6 +56,10 @@ const Blog = new Schema(
     },
     imageSrc2: {
       type: String,
+    },
+    imageCredit2: {
+      type: String,
+      required: false,
     },
     subHeading3: {
       type: String,
@@ -59,6 +71,10 @@ const Blog = new Schema(
     imageSrc3: {
       type: String,
     },
+    imageCredit3: {
+      type: String,
+      required: false,
+    },
     subHeading4: {
       type: String,
     },
@@ -68,6 +84,10 @@ const Blog = new Schema(
     },
     imageSrc4: {
       type: String,
+    },
+    imageCredit4: {
+      type: String,
+      required: false,
     },
     subHeading5: {
       type: String,
@@ -79,6 +99,10 @@ const Blog = new Schema(
     imageSrc5: {
       type: String,
     },
+    imageCredit5: {
+      type: String,
+      required: false,
+    },
     subHeading6: {
       type: String,
     },
@@ -88,6 +112,10 @@ const Blog = new Schema(
     },
     imageSrc6: {
       type: String,
+    },
+    imageCredit6: {
+      type: String,
+      required: false,
     },
   },
   { timestamps: { currentTime: () => Date.now() } }

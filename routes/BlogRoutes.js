@@ -56,27 +56,40 @@ router.post("/blog/edit/:id", async (req, res) => {
 
   blog.blogTitle = req.body.blogTitle;
   blog.imageSrc = req.body.imageSrc;
+  blog.imageCredit = req.body.imageCredit;
   blog.content = req.body.content;
   blog.countryName = req.body.countryName;
   blog.cityName = req.body.cityName;
   blog.keywords = req.body.keywords;
   blog.subHeading1 = req.body.subHeading1;
   blog.imageSrc1 = req.body.imageSrc1;
+  blog.imageCredit1 = req.body.imageCredit1;
+
   blog.content1 = req.body.content1;
   blog.subHeading2 = req.body.subHeading2;
   blog.imageSrc2 = req.body.imageSrc2;
+  blog.imageCredit2 = req.body.imageCredit2;
+
   blog.content2 = req.body.content2;
   blog.subHeading3 = req.body.subHeading3;
   blog.imageSrc3 = req.body.imageSrc3;
+  blog.imageCredit3 = req.body.imageCredit3;
+
   blog.content3 = req.body.content3;
   blog.subHeading4 = req.body.subHeading4;
   blog.imageSrc4 = req.body.imageSrc4;
+  blog.imageCredit4 = req.body.imageCredit4;
+
   blog.content4 = req.body.content4;
   blog.subHeading5 = req.body.subHeading5;
   blog.imageSrc5 = req.body.imageSrc5;
+  blog.imageCredit5 = req.body.imageCredit5;
+
   blog.content5 = req.body.content5;
   blog.subHeading6 = req.body.subHeading6;
   blog.imageSrc6 = req.body.imageSrc6;
+  blog.imageCredit6 = req.body.imageCredit6;
+
   blog.content6 = req.body.content6;
 
   blog.save().then(async () => {
