@@ -98,10 +98,12 @@ router.post("/blog/edit/:id", async (req, res) => {
 
   blog.content6 = req.body.content6;
 
-  blog.save().then(async () => {
-    const blogData = await Blog.find();
-    res.json({ blog: blogData }).status(200);
-  });
+  // blog.save().then(async () => {
+  //   const blogData = await Blog.find();
+  //   res.json({ blog: blogData }).status(200);
+  // });
+  blog.save();
+  res.send(blog).status(200);
 });
 
 //Delete by id
