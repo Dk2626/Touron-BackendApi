@@ -26,6 +26,12 @@ router.get("/blog", async (req, res) => {
     res.send(blog);
   }
 });
+router.get("/blogcount", async (req, res) => {
+  console.log("Blog route called");
+  const blog = await Blog.countDocuments();
+  console.log(`blog`, blog);
+  res.json({ count: blog }).status(200);
+});
 
 //Post city
 router.post("/blog", async (req, res) => {
