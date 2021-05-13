@@ -26,6 +26,27 @@ router.get("/blog", async (req, res) => {
     res.send(blog);
   }
 });
+
+router.get("/blog/search", async (req, res) => {
+  const pageSize = parseInt(req.query.pageSize);
+  const page = parseInt(req.query.page);
+
+  const blog = await Blog.find()
+    .select({
+      _id: 1,
+      blogTitle: 1,
+      imageSrc: 1,
+      content: 1,
+      createdAt: 1,
+      updatedAt: 1,
+    })
+    .sort({ createdAt: -1 })
+    .skip((page - 1) * 10)
+    .limit(pageSize);
+  console.log("Blog route called", blog.length);
+
+  res.send(blog);
+});
 router.get("/blogcount", async (req, res) => {
   console.log("Blog route called");
   const blog = await Blog.countDocuments();
