@@ -12,7 +12,7 @@ router.get("/city", async (req, res) => {
     const pageSize = parseInt(req.query.pageSize);
     const page = parseInt(req.query.page);
     const city = await City.find()
-      .skip((page - 1) * 10)
+      .skip((page - 1) * pageSize)
       .limit(pageSize);
     console.log("City route called");
     res.send(city);
@@ -23,12 +23,26 @@ router.get("/city", async (req, res) => {
     res.send(city);
   }
 });
-
-// router.get("/city/:id", async (req, res) => {
-//   console.log(req.params, "id vanthuruchu");
-//   const city = await City.findById({ _id: req.params.id });
-//   res.send(city);
-// });
+router.get("/city/search", async (req, res) => {
+  if (req.query.page && req.query.pageSize) {
+    const pageSize = parseInt(req.query.pageSize);
+    const page = parseInt(req.query.page);
+    const city = await City.find()
+      .select({ cityName: 1, countryName: 1, imageUrl: 1 })
+      .skip((page - 1) * pageSize)
+      .limit(pageSize);
+    console.log("City route called");
+    res.send(city);
+  } else {
+    const city = await City.find().select({
+      cityName: 1,
+      countryName: 1,
+      imageUrl: 1,
+    });
+    console.log("City route called");
+    res.send(city);
+  }
+});
 
 //Get City by Name
 

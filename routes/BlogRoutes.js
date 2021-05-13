@@ -15,7 +15,7 @@ router.get("/blog", async (req, res) => {
 
     const blog = await Blog.find()
       .sort({ createdAt: -1 })
-      .skip((page - 1) * 10)
+      .skip((page - 1) * pageSize)
       .limit(pageSize);
     console.log("Blog route called", blog.length);
 
@@ -41,7 +41,7 @@ router.get("/blog/search", async (req, res) => {
       updatedAt: 1,
     })
     .sort({ createdAt: -1 })
-    .skip((page - 1) * 10)
+    .skip((page - 1) * pageSize)
     .limit(pageSize);
   console.log("Blog route called", blog.length);
 
