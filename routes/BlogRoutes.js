@@ -39,6 +39,7 @@ router.get("/blog/search", async (req, res) => {
       content: 1,
       createdAt: 1,
       updatedAt: 1,
+      countryName: 1,
     })
     .sort({ createdAt: -1 })
     .skip((page - 1) * pageSize)
