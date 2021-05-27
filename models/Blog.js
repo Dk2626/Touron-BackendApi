@@ -117,6 +117,10 @@ const Blog = new Schema(
       type: String,
       required: false,
     },
+    writtenBy: {
+      type: String,
+      required: false,
+    },
   },
   { timestamps: { currentTime: () => Date.now() } }
 );

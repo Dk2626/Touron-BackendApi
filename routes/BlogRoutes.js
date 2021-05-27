@@ -40,6 +40,7 @@ router.get("/blog/search", async (req, res) => {
       createdAt: 1,
       updatedAt: 1,
       countryName: 1,
+      writtenBy: 1,
     })
     .sort({ createdAt: -1 })
     .skip((page - 1) * pageSize)
@@ -119,6 +120,7 @@ router.post("/blog/edit/:id", async (req, res) => {
   blog.imageCredit6 = req.body.imageCredit6;
 
   blog.content6 = req.body.content6;
+  blog.writtenBy = req.body.writtenBy;
 
   // blog.save().then(async () => {
   //   const blogData = await Blog.find();
