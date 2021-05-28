@@ -42,6 +42,8 @@ const corsObj = {
 //using the cors obj
 app.use(cors(corsObj));
 
+app.use("/uploads", express.static("uploads"));
+
 app.use(bodyParser.json());
 app.use(cityRoute);
 app.use(PlaceRoute);
