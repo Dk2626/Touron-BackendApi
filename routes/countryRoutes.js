@@ -4,34 +4,34 @@ const express = require("express");
 
 const router = express.Router();
 
-const multer = require("multer");
+// const multer = require("multer");
 
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "./uploads");
-  },
-  filename: function (req, file, cb) {
-    cb(null, file.fieldname + "-" + Date.now() + file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: function (req, file, cb) {
+//     cb(null, "./uploads");
+//   },
+//   filename: function (req, file, cb) {
+//     cb(null, file.fieldname + "-" + Date.now() + file.originalname);
+//   },
+// });
 
-const fileFilter = (req, file, cb) => {
-  if (
-    file.mimetype === "image/png" ||
-    file.mimetype === "image/jpg" ||
-    file.mimetype === "image/jpeg"
-  ) {
-    cb(null, true);
-  } else {
-    cb(null, false);
-  }
-};
+// const fileFilter = (req, file, cb) => {
+//   if (
+//     file.mimetype === "image/png" ||
+//     file.mimetype === "image/jpg" ||
+//     file.mimetype === "image/jpeg"
+//   ) {
+//     cb(null, true);
+//   } else {
+//     cb(null, false);
+//   }
+// };
 
-const upload = multer({
-  storage: storage,
-  limits: { fieldSize: 1024 * 1024 * 6 },
-  fileFilter: fileFilter,
-});
+// const upload = multer({
+//   storage: storage,
+//   limits: { fieldSize: 1024 * 1024 * 6 },
+//   fileFilter: fileFilter,
+// });
 
 const Country = mongoose.model("Country");
 
@@ -73,36 +73,36 @@ router.post("/country", async (req, res) => {
     res.send(err);
   }
 });
-router.post(
-  "/countrys",
-  upload.single("countryImage"),
+// router.post(
+//   "/countrys",
+//   upload.single("countryImage"),
 
-  async (req, res) => {
-    let country = new Country();
-    country.countryName = req.body.countryName;
-    country.aboutCountry = req.body.aboutCountry;
-    country.imageUrl = req.body.imageUrl;
-    country.weather = req.body.weather;
-    country.idealDays = req.body.idealDays;
-    country.bestPlaces = req.body.bestPlaces;
-    country.countryFlagImage = req.body.countryFlagImage;
-    country.visa = {
-      onArrival: req.body.onArrival,
-      cost: req.body.cost,
-    };
-    country.general = {
-      currency: req.body.currency,
-      timeZone: req.body.timeZone,
-      bestTimeToVisit: req.body.bestTimeToVisit,
-    };
-    country.countryImage = `https://touron-api.herokuapp.com/${req.file.path}`;
-    console.log(`req.body`, req.body);
-    console.log(`req.body`, country);
-    console.log(`req.body`, req.file);
-    country.save();
-    res.send("success");
-  }
-);
+//   async (req, res) => {
+//     let country = new Country();
+//     country.countryName = req.body.countryName;
+//     country.aboutCountry = req.body.aboutCountry;
+//     country.imageUrl = req.body.imageUrl;
+//     country.weather = req.body.weather;
+//     country.idealDays = req.body.idealDays;
+//     country.bestPlaces = req.body.bestPlaces;
+//     country.countryFlagImage = req.body.countryFlagImage;
+//     country.visa = {
+//       onArrival: req.body.onArrival,
+//       cost: req.body.cost,
+//     };
+//     country.general = {
+//       currency: req.body.currency,
+//       timeZone: req.body.timeZone,
+//       bestTimeToVisit: req.body.bestTimeToVisit,
+//     };
+//     country.countryImage = `https://touron-api.herokuapp.com/${req.file.path}`;
+//     console.log(`req.body`, req.body);
+//     console.log(`req.body`, country);
+//     console.log(`req.body`, req.file);
+//     country.save();
+//     res.send("success");
+//   }
+// );
 
 //single city to edit
 router.get("/country/edit/:id", async (req, res) => {
