@@ -94,7 +94,7 @@ ${attachment
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      res.json({ Success: false }).status(400);
+      res.json({ Success: false, error: error }).status(400);
     }
     console.log("Message sent: " + info.response);
     res.json({ Success: true }).status(200);
