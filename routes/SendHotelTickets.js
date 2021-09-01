@@ -72,7 +72,7 @@ ${attachment
 <p style="font-family: Lato;color:black">Please find the attached confirmation voucher & feel free to reach us for any queries</p>
 <p style="font-family: Lato;color:black">Happy Day to you!! <p>
 <div style={{display: "flex"}}>
- <img src="https://firebasestorage.googleapis.com/v0/b/touronapp-248e4.appspot.com/o/Signature.png?alt=media&token=5553474f-7d3a-4afb-9863-f49c549507e7"  width='100%' height='100%'/>
+ <img src="https://firebasestorage.googleapis.com/v0/b/touronapp-248e4.appspot.com/o/WhatsApp%20Image%202021-09-01%20at%2013.08.51.jpeg?alt=media&token=82d193c1-0c21-4eba-9312-6a4d9a71f1d1"  width='100%' height='100%'/>
 
  <div>
 
