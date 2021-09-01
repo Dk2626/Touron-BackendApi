@@ -31,8 +31,8 @@ const sendmail = (name, email, cc, attachment, destination, res) => {
     attachments: pdfs,
     html: `<body style="margin: 0; padding: 0;"> 
       <p>Dear ${name},<p>
-<p>Greetings! Hope you are doing well!!<p>
-<p>We have completed booking your resort for your travel dates as below</p>
+<p style="font-family: Lato;color:black">Greetings! Hope you are doing well!!</p>
+<p style="font-family: Lato;color:black">We have completed booking your resort for your travel dates as below</p>
 
 
 
@@ -69,17 +69,15 @@ ${attachment
   })
   .join("")}
 
-<p>Please find the attached confirmation voucher & feel free to reach us for any queries</p>
-<p>Happy Day to you!! <p>
+<p style="font-family: Lato;color:black">Please find the attached confirmation voucher & feel free to reach us for any queries</p>
+<p style="font-family: Lato;color:black">Happy Day to you!! <p>
 <div style={{display: "flex"}}>
- <img src="https://touron.in/static/media/logof.801ade17.png"  width='120px' height='100px'/>
+ <img src="https://firebasestorage.googleapis.com/v0/b/touronapp-248e4.appspot.com/o/Signature.png?alt=media&token=5553474f-7d3a-4afb-9863-f49c549507e7"  width='100%' height='100%'/>
+
  <div>
-<p> Best Regards, </p>
-<p>Booking Team</p>
-<p>tour On (A Brand of Lotsatravel Holidays LLP)</p>
-<p>Phone / Whatsapp : +91-9751009800  </p>
+
 <div style={{display: "flex"}}>
-<p>Click here for:</p>
+<p style="font-family: Lato;color:black">Click here for:</p>
 <a href="https://www.touron.in/" target="_blank">Website</a>
 <a href="https://www.facebook.com/touronholidays" target="_blank">Facebook</a>
 <a href="https://www.instagram.com/touronholidays" target="_blank">Instagram</a>
