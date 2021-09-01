@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
   secure: true,
   auth: {
     user: "reservations@touron.in",
-    pass:'u0FfuR3Kx29Z',
+    pass: "u0FfuR3Kx29Z",
   },
 });
 
@@ -97,10 +97,10 @@ Your journey starts on ${onwardDate} <p>
 
   transporter.sendMail(mailOptions, function (error, info) {
     if (error) {
-      return console.log(error);
+      res.json({ Success: false }).status(400);
     }
     console.log("Message sent: " + info.response);
-    res.json({ Sucess: "Flight Ticket email sent successfully" }).status(200);
+    res.json({ Success: true }).status(200);
   });
 };
 
