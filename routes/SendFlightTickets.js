@@ -13,7 +13,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const sendmail = (name, email, cc, attachment, onwardDate, res) => {
+const sendmail = (name, email, cc, attachment, onwardDate, res, req) => {
   const pdfs = attachment?.map((a) => {
     return {
       filename: a.filename,
@@ -100,14 +100,14 @@ Your journey starts on ${onwardDate} <p>
       res.json({ Success: false, error: error }).status(400);
     }
     console.log("Message sent: " + info.response);
-    res.json({ Success: true }).status(200);
+    res.json({ Success: true, data: req.body }).status(200);
   });
 };
 
 router.post("/sendflightemail", async (req, res) => {
   console.log(`req.body`, req.body);
   const { name, email, cc, attachment, onwardDate } = req.body;
-  sendmail(name, email, cc, attachment, onwardDate, res);
+  sendmail(name, email, cc, attachment, onwardDate, res, req);
 });
 
 module.exports = router;
