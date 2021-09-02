@@ -76,6 +76,6 @@ mongoose.connection.on("error", (err) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Hi.Welcome to touron-api");
+  res.send("Hi there,Welcome to touron-api");
 });
 app.listen(process.env.PORT || 4400, () => console.log("Running on 3000"));
