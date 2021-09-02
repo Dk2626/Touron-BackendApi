@@ -59,8 +59,8 @@ app.use(DomesticCityRoute);
 app.use(CompanyStats);
 app.use(SendHotelEmail);
 app.use(SendFlightEmail);
-const mongodbUri = 'mongodb+srv://vicky:aamecvicky123@cluster0-knxey.mongodb.net/city?retryWrites=true&w=majority';
-
+// const mongodbUri = 'mongodb+srv://vicky:aamecvicky123@cluster0-knxey.mongodb.net/city?retryWrites=true&w=majority';
+const mongodbUri = process.env.MONGODB_URI;
 mongoose.connect(mongodbUri, {
   useNewUrlParser: true,
   useCreateIndex: true,
